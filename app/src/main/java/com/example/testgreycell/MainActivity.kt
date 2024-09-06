@@ -1,6 +1,7 @@
 package com.example.testgreycell
 
 import android.R
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         binding.edtPhone.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
+            @SuppressLint("SetTextI18n")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val phone = s.toString()
                 if (phone.length in 8..10 && phone.isDigitsOnly()) {
